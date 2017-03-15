@@ -15,7 +15,7 @@
         <title>IDEA搭建SpringMVC并用maven配置的小例子</title>
     </head>
     <body>
-        你已经搭建成功SpringMVC框架了
+        你已经搭建成功SpringMVC框架了，真的吗，是吗
     </body>
 </body>
 </html>
