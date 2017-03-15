@@ -15,6 +15,7 @@ public class ViewController {
         //第二步没有成功
         System.out.println("测试上传到github");
         //上传成功，没有添加公钥
+        //第三步，Idea直接push成功
         return "index";
     }
 }
