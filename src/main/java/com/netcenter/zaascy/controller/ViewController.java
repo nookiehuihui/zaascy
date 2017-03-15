@@ -11,6 +11,7 @@ public class ViewController {
     @RequestMapping("/view")
     public String view(){
         System.out.println("你已通过springMVC进入controller方法。。。。");
+        //怎么上传到github
         return "index";
     }
 }
