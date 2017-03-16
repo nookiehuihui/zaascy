@@ -3,7 +3,7 @@
 <mapper namespace="com.netcenter.zaascy.dao.TradeMapper" >
   <resultMap id="BaseResultMap" type="com.netcenter.zaascy.bean.Trade" >
     <constructor >
-      <arg column="id" jdbcType="INTEGER" javaType="java.lang.Long" />
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Long" />
       <arg column="project_num" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="project_year" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="depart_id" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -18,11 +18,11 @@
       <arg column="project_person" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="start_date" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="end_date" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="project_summary" jdbcType="LONGNVARCHAR" javaType="java.lang.String" />
+      <arg column="project_summary" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="intention_amount" jdbcType="NUMERIC" javaType="java.math.BigDecimal" />
-      <arg column="intention_amount_explain" jdbcType="LONGNVARCHAR" javaType="java.lang.String" />
+      <arg column="intention_amount_explain" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="sign_amount" jdbcType="NUMERIC" javaType="java.math.BigDecimal" />
-      <arg column="remarks" jdbcType="LONGNVARCHAR" javaType="java.lang.String" />
+      <arg column="remarks" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="submiter_id" jdbcType="NUMERIC" javaType="java.lang.Long" />
       <arg column="submiter" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="assessor_id" jdbcType="NUMERIC" javaType="java.lang.Long" />
@@ -33,10 +33,8 @@
       <arg column="join_state" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
-  <insert id="insert" parameterType="com.netcenter.zaascy.bean.Trade" >
-    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+  <insert id="insert" parameterType="com.netcenter.zaascy.bean.Trade" useGeneratedKeys="true" keyProperty="id">
+
     insert into CY_CGZHJY (project_num, project_year, depart_id, 
       depart, project_type, project_type_code, 
       project_name, zaas_tech_type, zaas_code, 
@@ -51,17 +49,15 @@
       #{depart,jdbcType=VARCHAR}, #{projectType,jdbcType=VARCHAR}, #{projectTypeCode,jdbcType=VARCHAR}, 
       #{projectName,jdbcType=VARCHAR}, #{zaasTechType,jdbcType=VARCHAR}, #{zaasCode,jdbcType=VARCHAR}, 
       #{customerDepart,jdbcType=VARCHAR}, #{departFullName,jdbcType=VARCHAR}, #{projectPerson,jdbcType=VARCHAR}, 
-      #{startDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, #{projectSummary,jdbcType=LONGNVARCHAR}, 
-      #{intentionAmount,jdbcType=NUMERIC}, #{intentionAmountExplain,jdbcType=LONGNVARCHAR}, 
-      #{signAmount,jdbcType=NUMERIC}, #{remarks,jdbcType=LONGNVARCHAR}, #{submiterId,jdbcType=NUMERIC}, 
+      #{startDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, #{projectSummary,jdbcType=VARCHAR}, 
+      #{intentionAmount,jdbcType=NUMERIC}, #{intentionAmountExplain,jdbcType=VARCHAR}, 
+      #{signAmount,jdbcType=NUMERIC}, #{remarks,jdbcType=VARCHAR}, #{submiterId,jdbcType=NUMERIC}, 
       #{submiter,jdbcType=VARCHAR}, #{assessorId,jdbcType=NUMERIC}, #{assessor,jdbcType=VARCHAR}, 
       #{submitState,jdbcType=INTEGER}, #{assessState,jdbcType=INTEGER}, #{downloadState,jdbcType=INTEGER}, 
       #{joinState,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.netcenter.zaascy.bean.Trade" >
-    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+  <insert id="insertSelective"  parameterType="com.netcenter.zaascy.bean.Trade" useGeneratedKeys="true" keyProperty="id">
+
     insert into CY_CGZHJY
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="projectNum != null" >
@@ -190,19 +186,19 @@
         #{endDate,jdbcType=TIMESTAMP},
       </if>
       <if test="projectSummary != null" >
-        #{projectSummary,jdbcType=LONGNVARCHAR},
+        #{projectSummary,jdbcType=VARCHAR},
       </if>
       <if test="intentionAmount != null" >
         #{intentionAmount,jdbcType=NUMERIC},
       </if>
       <if test="intentionAmountExplain != null" >
-        #{intentionAmountExplain,jdbcType=LONGNVARCHAR},
+        #{intentionAmountExplain,jdbcType=VARCHAR},
       </if>
       <if test="signAmount != null" >
         #{signAmount,jdbcType=NUMERIC},
       </if>
       <if test="remarks != null" >
-        #{remarks,jdbcType=LONGNVARCHAR},
+        #{remarks,jdbcType=VARCHAR},
       </if>
       <if test="submiterId != null" >
         #{submiterId,jdbcType=NUMERIC},
