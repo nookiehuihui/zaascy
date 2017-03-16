@@ -8,12 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-</head>
-<body>
     <head>
         <title>IDEA搭建SpringMVC并用maven配置的小例子</title>
     </head>
+</head>
+<body>
+
     <div>
         你已经搭建成功SpringMVC框架了，真的吗，是吗
     </div>
