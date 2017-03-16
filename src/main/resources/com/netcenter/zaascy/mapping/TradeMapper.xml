@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.netcenter.zaascy.dao.TradeMapper" >
+  <resultMap id="BaseResultMap" type="com.netcenter.zaascy.bean.Trade" >
+    <constructor >
+      <arg column="id" jdbcType="INTEGER" javaType="java.lang.Long" />
+      <arg column="project_num" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="project_year" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="depart_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="depart" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="project_type" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="project_type_code" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="project_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="zaas_tech_type" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="zaas_code" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="customer_depart" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="depart_full_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="project_person" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="start_date" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="end_date" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="project_summary" jdbcType="LONGNVARCHAR" javaType="java.lang.String" />
+      <arg column="intention_amount" jdbcType="NUMERIC" javaType="java.math.BigDecimal" />
+      <arg column="intention_amount_explain" jdbcType="LONGNVARCHAR" javaType="java.lang.String" />
+      <arg column="sign_amount" jdbcType="NUMERIC" javaType="java.math.BigDecimal" />
+      <arg column="remarks" jdbcType="LONGNVARCHAR" javaType="java.lang.String" />
+      <arg column="submiter_id" jdbcType="NUMERIC" javaType="java.lang.Long" />
+      <arg column="submiter" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="assessor_id" jdbcType="NUMERIC" javaType="java.lang.Long" />
+      <arg column="assessor" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="submit_state" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="assess_state" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="download_state" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="join_state" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.netcenter.zaascy.bean.Trade" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into CY_CGZHJY (project_num, project_year, depart_id, 
+      depart, project_type, project_type_code, 
+      project_name, zaas_tech_type, zaas_code, 
+      customer_depart, depart_full_name, project_person, 
+      start_date, end_date, project_summary, 
+      intention_amount, intention_amount_explain, 
+      sign_amount, remarks, submiter_id, 
+      submiter, assessor_id, assessor, 
+      submit_state, assess_state, download_state, 
+      join_state)
+    values (#{projectNum,jdbcType=VARCHAR}, #{projectYear,jdbcType=INTEGER}, #{departId,jdbcType=VARCHAR}, 
+      #{depart,jdbcType=VARCHAR}, #{projectType,jdbcType=VARCHAR}, #{projectTypeCode,jdbcType=VARCHAR}, 
+      #{projectName,jdbcType=VARCHAR}, #{zaasTechType,jdbcType=VARCHAR}, #{zaasCode,jdbcType=VARCHAR}, 
+      #{customerDepart,jdbcType=VARCHAR}, #{departFullName,jdbcType=VARCHAR}, #{projectPerson,jdbcType=VARCHAR}, 
+      #{startDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, #{projectSummary,jdbcType=LONGNVARCHAR}, 
+      #{intentionAmount,jdbcType=NUMERIC}, #{intentionAmountExplain,jdbcType=LONGNVARCHAR}, 
+      #{signAmount,jdbcType=NUMERIC}, #{remarks,jdbcType=LONGNVARCHAR}, #{submiterId,jdbcType=NUMERIC}, 
+      #{submiter,jdbcType=VARCHAR}, #{assessorId,jdbcType=NUMERIC}, #{assessor,jdbcType=VARCHAR}, 
+      #{submitState,jdbcType=INTEGER}, #{assessState,jdbcType=INTEGER}, #{downloadState,jdbcType=INTEGER}, 
+      #{joinState,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.netcenter.zaascy.bean.Trade" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into CY_CGZHJY
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="projectNum != null" >
+        project_num,
+      </if>
+      <if test="projectYear != null" >
+        project_year,
+      </if>
+      <if test="departId != null" >
+        depart_id,
+      </if>
+      <if test="depart != null" >
+        depart,
+      </if>
+      <if test="projectType != null" >
+        project_type,
+      </if>
+      <if test="projectTypeCode != null" >
+        project_type_code,
+      </if>
+      <if test="projectName != null" >
+        project_name,
+      </if>
+      <if test="zaasTechType != null" >
+        zaas_tech_type,
+      </if>
+      <if test="zaasCode != null" >
+        zaas_code,
+      </if>
+      <if test="customerDepart != null" >
+        customer_depart,
+      </if>
+      <if test="departFullName != null" >
+        depart_full_name,
+      </if>
+      <if test="projectPerson != null" >
+        project_person,
+      </if>
+      <if test="startDate != null" >
+        start_date,
+      </if>
+      <if test="endDate != null" >
+        end_date,
+      </if>
+      <if test="projectSummary != null" >
+        project_summary,
+      </if>
+      <if test="intentionAmount != null" >
+        intention_amount,
+      </if>
+      <if test="intentionAmountExplain != null" >
+        intention_amount_explain,
+      </if>
+      <if test="signAmount != null" >
+        sign_amount,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="submiterId != null" >
+        submiter_id,
+      </if>
+      <if test="submiter != null" >
+        submiter,
+      </if>
+      <if test="assessorId != null" >
+        assessor_id,
+      </if>
+      <if test="assessor != null" >
+        assessor,
+      </if>
+      <if test="submitState != null" >
+        submit_state,
+      </if>
+      <if test="assessState != null" >
+        assess_state,
+      </if>
+      <if test="downloadState != null" >
+        download_state,
+      </if>
+      <if test="joinState != null" >
+        join_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="projectNum != null" >
+        #{projectNum,jdbcType=VARCHAR},
+      </if>
+      <if test="projectYear != null" >
+        #{projectYear,jdbcType=INTEGER},
+      </if>
+      <if test="departId != null" >
+        #{departId,jdbcType=VARCHAR},
+      </if>
+      <if test="depart != null" >
+        #{depart,jdbcType=VARCHAR},
+      </if>
+      <if test="projectType != null" >
+        #{projectType,jdbcType=VARCHAR},
+      </if>
+      <if test="projectTypeCode != null" >
+        #{projectTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="projectName != null" >
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="zaasTechType != null" >
+        #{zaasTechType,jdbcType=VARCHAR},
+      </if>
+      <if test="zaasCode != null" >
+        #{zaasCode,jdbcType=VARCHAR},
+      </if>
+      <if test="customerDepart != null" >
+        #{customerDepart,jdbcType=VARCHAR},
+      </if>
+      <if test="departFullName != null" >
+        #{departFullName,jdbcType=VARCHAR},
+      </if>
+      <if test="projectPerson != null" >
+        #{projectPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null" >
+        #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDate != null" >
+        #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="projectSummary != null" >
+        #{projectSummary,jdbcType=LONGNVARCHAR},
+      </if>
+      <if test="intentionAmount != null" >
+        #{intentionAmount,jdbcType=NUMERIC},
+      </if>
+      <if test="intentionAmountExplain != null" >
+        #{intentionAmountExplain,jdbcType=LONGNVARCHAR},
+      </if>
+      <if test="signAmount != null" >
+        #{signAmount,jdbcType=NUMERIC},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=LONGNVARCHAR},
+      </if>
+      <if test="submiterId != null" >
+        #{submiterId,jdbcType=NUMERIC},
+      </if>
+      <if test="submiter != null" >
+        #{submiter,jdbcType=VARCHAR},
+      </if>
+      <if test="assessorId != null" >
+        #{assessorId,jdbcType=NUMERIC},
+      </if>
+      <if test="assessor != null" >
+        #{assessor,jdbcType=VARCHAR},
+      </if>
+      <if test="submitState != null" >
+        #{submitState,jdbcType=INTEGER},
+      </if>
+      <if test="assessState != null" >
+        #{assessState,jdbcType=INTEGER},
+      </if>
+      <if test="downloadState != null" >
+        #{downloadState,jdbcType=INTEGER},
+      </if>
+      <if test="joinState != null" >
+        #{joinState,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

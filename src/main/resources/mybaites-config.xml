@@ -36,7 +36,6 @@
     <!-- 配置数据映射文件 -->
     <mappers>
         <package name="com.netcenter.zaascy.mapping"/>
-
     </mappers>
 
 </configuration>

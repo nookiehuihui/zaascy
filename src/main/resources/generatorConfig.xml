@@ -44,12 +44,12 @@
                 type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
                 type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口 -->
-        <javaClientGenerator type="MIXEDMAPPER" targetPackage="com.netcenter.zaascy.dao" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.netcenter.zaascy.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-        <table tableName="CY_CYZHJY" domainObjectName="Trade"
+        <table tableName="CY_CGZHJY" domainObjectName="Trade"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
