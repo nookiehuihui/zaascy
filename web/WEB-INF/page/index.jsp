@@ -14,7 +14,6 @@
     <head>
         <title>IDEA搭建SpringMVC并用maven配置的小例子</title>
     </head>
-    <!-- 莫名其妙的出现空指针在所有的jsp页面，原因可能是lib下的jsp-api.jar/servlet-api.jar 与tomcat lib下重复造成冲突 -->
     <div>
         你已经搭建成功SpringMVC框架了，真的吗，是吗
     </div>
