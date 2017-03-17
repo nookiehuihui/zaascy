@@ -4,15 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/pom.xml" line="61" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60ffd529-b31f-43d0-a733-8d06721dc4b9" name="Default" comment="持久层搭建">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ae1996c6-4cf4-42bd-b25e-001a86d205d7/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/ae1996c6-4cf4-42bd-b25e-001a86d205d7/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ae1996c6-4cf4-42bd-b25e-001a86d205d7/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/ae1996c6-4cf4-42bd-b25e-001a86d205d7/_metadata_/metadata.values.at" />
+    <list default="true" id="60ffd529-b31f-43d0-a733-8d06721dc4b9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/zaascy_war_exploded/WEB-INF/classes/com/netcenter/zaascy/controller/ViewController.class" afterPath="$PROJECT_DIR$/out/artifacts/zaascy_war_exploded/WEB-INF/classes/com/netcenter/zaascy/controller/ViewController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/netcenter/zaascy/controller/ViewController.class" afterPath="$PROJECT_DIR$/target/classes/com/netcenter/zaascy/controller/ViewController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ae1996c6-4cf4-42bd-b25e-001a86d205d7.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/ae1996c6-4cf4-42bd-b25e-001a86d205d7.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/zaascy_war_exploded/WEB-INF/page/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/zaascy_war_exploded/WEB-INF/page/index.jsp" />
     </list>
@@ -917,7 +911,7 @@
       <workItem from="1489627711044" duration="2858000" />
       <workItem from="1489630796183" duration="7600000" />
       <workItem from="1489641825565" duration="19459000" />
-      <workItem from="1489715363549" duration="22187000" />
+      <workItem from="1489715363549" duration="22195000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1489570039620</created>
@@ -1171,11 +1165,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489747661816</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="持久层搭建">
+      <created>1489747672370</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1489747672370</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65991000" />
+    <option name="totallyTimeSpent" value="65999000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
