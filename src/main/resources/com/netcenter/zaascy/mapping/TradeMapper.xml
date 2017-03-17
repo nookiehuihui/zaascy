@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.netcenter.zaascy.dao.TradeMapper" >
   <resultMap id="BaseResultMap" type="com.netcenter.zaascy.bean.Trade" >
-    <constructor >
+    <constructor>
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Long" />
       <arg column="project_num" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="project_year" jdbcType="INTEGER" javaType="java.lang.Integer" />
@@ -32,10 +32,11 @@
       <arg column="download_state" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="join_state" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
+
   </resultMap>
   <insert id="insert" parameterType="com.netcenter.zaascy.bean.Trade" useGeneratedKeys="true" keyProperty="id">
 
-    insert into CY_CGZHJY (project_num, project_year, depart_id, 
+    insert into CY_CGZHJY (project_num, project_year, depart_id,
       depart, project_type, project_type_code, 
       project_name, zaas_tech_type, zaas_code, 
       customer_depart, depart_full_name, project_person, 
@@ -56,7 +57,7 @@
       #{submitState,jdbcType=INTEGER}, #{assessState,jdbcType=INTEGER}, #{downloadState,jdbcType=INTEGER}, 
       #{joinState,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective"  parameterType="com.netcenter.zaascy.bean.Trade" useGeneratedKeys="true" keyProperty="id">
+  <insert id="insertSelective"  useGeneratedKeys="true" keyProperty="id" parameterType="com.netcenter.zaascy.bean.Trade">
 
     insert into CY_CGZHJY
     <trim prefix="(" suffix=")" suffixOverrides="," >
