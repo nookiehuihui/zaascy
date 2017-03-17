@@ -9,16 +9,36 @@
 <html>
 <head>
     <title>trade edit jsp</title>
+    <script type="application/javascript" src="/resources/js/jquery.js"></script>
 </head>
 <body>
     <div>
-        <form action="/userController/view.do" method="post" >
-            <input type="text" name="projectName" />
-            <input type="text" name="zaasCode" />
-            <br/>
-            测试：<input type="test" name="test"/>
-            <input type="submit" value="submit">
+        <form action="/tradeController/save.do" method="post" >
+            <table>
+                <tr>
+                    <td>项目名称</td>
+                    <td>
+                        <input type="text" name="projectName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>院成果编码</td>
+                    <td>
+                        <input type="text" name="zaasCode" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="submit">
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
 </body>
+<script type="application/javascript">
+    $("#editBt").click(function (){
+        window.location.href = "edit.do";
+    });
+</script>
 </html>
