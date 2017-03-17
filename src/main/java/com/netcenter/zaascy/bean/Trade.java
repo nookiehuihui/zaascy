@@ -91,8 +91,48 @@ public class Trade {
         this.joinState = joinState;
     }
 
+    public Trade(Long id,String projectName,String zaasCode){
+        this.id = id;
+        this.projectName = projectName;
+        this.zaasCode = zaasCode;
+    }
+
     public Trade() {
         super();
+    }
+
+    @Override
+    public String toString() {
+        return "Trade{" +
+                "id=" + id +
+                ", projectNum='" + projectNum + '\'' +
+                ", projectYear=" + projectYear +
+                ", departId='" + departId + '\'' +
+                ", depart='" + depart + '\'' +
+                ", projectType='" + projectType + '\'' +
+                ", projectTypeCode='" + projectTypeCode + '\'' +
+                ", projectName='" + projectName + '\'' +
+                ", zaasTechType='" + zaasTechType + '\'' +
+                ", zaasCode='" + zaasCode + '\'' +
+                ", customerDepart='" + customerDepart + '\'' +
+                ", departFullName='" + departFullName + '\'' +
+                ", projectPerson='" + projectPerson + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", projectSummary='" + projectSummary + '\'' +
+                ", intentionAmount=" + intentionAmount +
+                ", intentionAmountExplain='" + intentionAmountExplain + '\'' +
+                ", signAmount=" + signAmount +
+                ", remarks='" + remarks + '\'' +
+                ", submiterId=" + submiterId +
+                ", submiter='" + submiter + '\'' +
+                ", assessorId=" + assessorId +
+                ", assessor='" + assessor + '\'' +
+                ", submitState=" + submitState +
+                ", assessState=" + assessState +
+                ", downloadState=" + downloadState +
+                ", joinState=" + joinState +
+                '}';
     }
 
     public Long getId() {
@@ -311,40 +351,6 @@ public class Trade {
         this.downloadState = downloadState;
     }
 
-    @Override
-    public String toString() {
-        return "Trade{" +
-                "id=" + id +
-                ", projectNum='" + projectNum + '\'' +
-                ", projectYear=" + projectYear +
-                ", departId='" + departId + '\'' +
-                ", depart='" + depart + '\'' +
-                ", projectType='" + projectType + '\'' +
-                ", projectTypeCode='" + projectTypeCode + '\'' +
-                ", projectName='" + projectName + '\'' +
-                ", zaasTechType='" + zaasTechType + '\'' +
-                ", zaasCode='" + zaasCode + '\'' +
-                ", customerDepart='" + customerDepart + '\'' +
-                ", departFullName='" + departFullName + '\'' +
-                ", projectPerson='" + projectPerson + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", projectSummary='" + projectSummary + '\'' +
-                ", intentionAmount=" + intentionAmount +
-                ", intentionAmountExplain='" + intentionAmountExplain + '\'' +
-                ", signAmount=" + signAmount +
-                ", remarks='" + remarks + '\'' +
-                ", submiterId=" + submiterId +
-                ", submiter='" + submiter + '\'' +
-                ", assessorId=" + assessorId +
-                ", assessor='" + assessor + '\'' +
-                ", submitState=" + submitState +
-                ", assessState=" + assessState +
-                ", downloadState=" + downloadState +
-                ", joinState=" + joinState +
-                '}';
-    }
-
     public Integer getJoinState() {
         return joinState;
     }
@@ -352,5 +358,4 @@ public class Trade {
     public void setJoinState(Integer joinState) {
         this.joinState = joinState;
     }
-
 }
