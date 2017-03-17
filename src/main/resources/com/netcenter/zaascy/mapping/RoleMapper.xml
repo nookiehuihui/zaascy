@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.netcenter.zaascy.dao.RoleMapper" >
+  <resultMap id="BaseResultMap" type="com.netcenter.zaascy.bean.Role" >
+    <constructor >
+      <idArg column="JUES_ID" jdbcType="NUMERIC" javaType="java.math.BigDecimal" />
+      <arg column="JUESMC" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="JUESSM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="JUESbh" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MOK_ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="JUESbz" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="JILCJZ" jdbcType="NUMERIC" javaType="java.math.BigDecimal" />
+      <arg column="JILCJSJ" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="JILXGZ" jdbcType="NUMERIC" javaType="java.math.BigDecimal" />
+      <arg column="JILXGSJ" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="JUESJB" jdbcType="NUMERIC" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    JUES_ID, JUESMC, JUESSM, JUESbh, MOK_ID, JUESbz, JILCJZ, JILCJSJ, JILXGZ, JILXGSJ, 
+    JUESJB
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.math.BigDecimal" >
+    select 
+    <include refid="Base_Column_List" />
+    from JS
+    where JUES_ID = #{juesId,jdbcType=NUMERIC}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal" >
+    delete from JS
+    where JUES_ID = #{juesId,jdbcType=NUMERIC}
+  </delete>
+  <insert id="insert" parameterType="com.netcenter.zaascy.bean.Role" >
+    insert into JS (JUES_ID, JUESMC, JUESSM, 
+      JUESbh, MOK_ID, JUESbz, 
+      JILCJZ, JILCJSJ, JILXGZ, 
+      JILXGSJ, JUESJB)
+    values (#{juesId,jdbcType=NUMERIC}, #{juesmc,jdbcType=VARCHAR}, #{juessm,jdbcType=VARCHAR}, 
+      #{juesbh,jdbcType=VARCHAR}, #{mokId,jdbcType=INTEGER}, #{juesbz,jdbcType=VARCHAR}, 
+      #{jilcjz,jdbcType=NUMERIC}, #{jilcjsj,jdbcType=TIMESTAMP}, #{jilxgz,jdbcType=NUMERIC}, 
+      #{jilxgsj,jdbcType=TIMESTAMP}, #{juesjb,jdbcType=NUMERIC})
+  </insert>
+  <insert id="insertSelective" parameterType="com.netcenter.zaascy.bean.Role" >
+    insert into JS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="juesId != null" >
+        JUES_ID,
+      </if>
+      <if test="juesmc != null" >
+        JUESMC,
+      </if>
+      <if test="juessm != null" >
+        JUESSM,
+      </if>
+      <if test="juesbh != null" >
+        JUESbh,
+      </if>
+      <if test="mokId != null" >
+        MOK_ID,
+      </if>
+      <if test="juesbz != null" >
+        JUESbz,
+      </if>
+      <if test="jilcjz != null" >
+        JILCJZ,
+      </if>
+      <if test="jilcjsj != null" >
+        JILCJSJ,
+      </if>
+      <if test="jilxgz != null" >
+        JILXGZ,
+      </if>
+      <if test="jilxgsj != null" >
+        JILXGSJ,
+      </if>
+      <if test="juesjb != null" >
+        JUESJB,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="juesId != null" >
+        #{juesId,jdbcType=NUMERIC},
+      </if>
+      <if test="juesmc != null" >
+        #{juesmc,jdbcType=VARCHAR},
+      </if>
+      <if test="juessm != null" >
+        #{juessm,jdbcType=VARCHAR},
+      </if>
+      <if test="juesbh != null" >
+        #{juesbh,jdbcType=VARCHAR},
+      </if>
+      <if test="mokId != null" >
+        #{mokId,jdbcType=INTEGER},
+      </if>
+      <if test="juesbz != null" >
+        #{juesbz,jdbcType=VARCHAR},
+      </if>
+      <if test="jilcjz != null" >
+        #{jilcjz,jdbcType=NUMERIC},
+      </if>
+      <if test="jilcjsj != null" >
+        #{jilcjsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jilxgz != null" >
+        #{jilxgz,jdbcType=NUMERIC},
+      </if>
+      <if test="jilxgsj != null" >
+        #{jilxgsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="juesjb != null" >
+        #{juesjb,jdbcType=NUMERIC},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.netcenter.zaascy.bean.Role" >
+    update JS
+    <set >
+      <if test="juesmc != null" >
+        JUESMC = #{juesmc,jdbcType=VARCHAR},
+      </if>
+      <if test="juessm != null" >
+        JUESSM = #{juessm,jdbcType=VARCHAR},
+      </if>
+      <if test="juesbh != null" >
+        JUESbh = #{juesbh,jdbcType=VARCHAR},
+      </if>
+      <if test="mokId != null" >
+        MOK_ID = #{mokId,jdbcType=INTEGER},
+      </if>
+      <if test="juesbz != null" >
+        JUESbz = #{juesbz,jdbcType=VARCHAR},
+      </if>
+      <if test="jilcjz != null" >
+        JILCJZ = #{jilcjz,jdbcType=NUMERIC},
+      </if>
+      <if test="jilcjsj != null" >
+        JILCJSJ = #{jilcjsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jilxgz != null" >
+        JILXGZ = #{jilxgz,jdbcType=NUMERIC},
+      </if>
+      <if test="jilxgsj != null" >
+        JILXGSJ = #{jilxgsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="juesjb != null" >
+        JUESJB = #{juesjb,jdbcType=NUMERIC},
+      </if>
+    </set>
+    where JUES_ID = #{juesId,jdbcType=NUMERIC}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.netcenter.zaascy.bean.Role" >
+    update JS
+    set JUESMC = #{juesmc,jdbcType=VARCHAR},
+      JUESSM = #{juessm,jdbcType=VARCHAR},
+      JUESbh = #{juesbh,jdbcType=VARCHAR},
+      MOK_ID = #{mokId,jdbcType=INTEGER},
+      JUESbz = #{juesbz,jdbcType=VARCHAR},
+      JILCJZ = #{jilcjz,jdbcType=NUMERIC},
+      JILCJSJ = #{jilcjsj,jdbcType=TIMESTAMP},
+      JILXGZ = #{jilxgz,jdbcType=NUMERIC},
+      JILXGSJ = #{jilxgsj,jdbcType=TIMESTAMP},
+      JUESJB = #{juesjb,jdbcType=NUMERIC}
+    where JUES_ID = #{juesId,jdbcType=NUMERIC}
+  </update>
+</mapper>
