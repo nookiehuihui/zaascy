@@ -49,6 +49,10 @@ public class ViewController {
     @RequestMapping(value={"/edit"})
     public ModelAndView handleRequest(@RequestParam("id")Long id){
         ModelAndView mav = new ModelAndView();
+        if(id!=null){
+            Trade trade = tradeService.selectByPrimaryKey(id);
+            mav.addObject("trade",trade);
+        }
         mav.setViewName("trade_edit");
         return mav;
     }
