@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 /**
  * Created by Administrator on 2017/3/20.
  */
-@Service(value="tradeService")
+@Service(value="userService")
 public class UserServiceImpl implements UserService{
     @Resource(name = "userDao")
     private UserMapper dao;

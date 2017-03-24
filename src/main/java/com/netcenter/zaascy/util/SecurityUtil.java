@@ -135,7 +135,7 @@ public class SecurityUtil {
             System.out.println("生成的随机令牌为:" + pwd);
             String token = SecurityUtil.encryptMessage(pwd);
             System.out.println("加密的随机令牌为:" + token + "长度为:" + token.length());
-            String username = "yest";
+            String username = "pengyh";
             String last_token_2 = SecurityUtil.encryptMessage(username + "&" + token);
             System.out.println("最终传递的令牌为:" + last_token_2 + "长度为:" + last_token_2.length());
             String last_token_de = SecurityUtil.decryptMessage(last_token_2);

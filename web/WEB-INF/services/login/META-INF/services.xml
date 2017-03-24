@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceGroup>
+    <service name="login" targetNamespace="http://ws.axis2Example/" >
+        <description>JNLPGenerator service</description>
+        <schema schemaNamespace="http://ws.axis2Example/" />
+        <parameter name="ServiceClass" locked="false">com.netcenter.zaascy.util.LoginUtil</parameter>
+        <operation name="login">
+            <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+        </operation>
+    </service>
+</serviceGroup>
